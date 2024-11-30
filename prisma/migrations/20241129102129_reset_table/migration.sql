@@ -12,7 +12,7 @@ CREATE TABLE "Bank" (
 -- CreateTable
 CREATE TABLE "Balance" (
     "id" UUID NOT NULL,
-    "value" DOUBLE PRECISION,
+    "value" TEXT NOT NULL,
     "status" BOOLEAN,
     "bankId" UUID NOT NULL,
     "created_at" TIMESTAMP(3) DEFAULT CURRENT_TIMESTAMP,
