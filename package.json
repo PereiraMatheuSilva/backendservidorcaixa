@@ -4,7 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node-dev  --transpile-only src/server.ts"
+    "dev": "ts-node-dev  --transpile-only src/server.ts",
+    "start": "ts-node-dev src/server.ts",
+    "vercel-build": "npx prisma migrate deploy"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
@@ -17,6 +19,7 @@
     "cors": "^2.8.5",
     "express": "^4.21.1",
     "express-async-errors": "^3.1.1",
-    "prisma": "^5.22.0"
+    "prisma": "^5.22.0",
+    "vercel": "^39.1.2"
   }
 }

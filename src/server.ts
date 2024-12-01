@@ -7,27 +7,26 @@ import { router } from './routes';
 const app = express();
 const port = 3333;
 
+// Configurações do Express
 app.use(express.json());
-app.use(express.urlencoded({extended: true}))
+app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 app.use(router);
 
-app.use((err: Error, req: Request, res: Response, next: NextFunction)=>{
-  
-  if(err instanceof Error){
-    //Se for instancia de error
+app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
+  if (err instanceof Error) {
+    // Se for instância de error
     return res.status(400).json({
-      error: err.message
-    })
+      error: err.message,
+    });
   }
 
   return res.status(500).json({
     status: 'error',
-    message: 'Internal server error.'
-  })
+    message: 'Internal server error.',
+  });
+});
 
-})
-
-
-app.listen(port, ()=> console.log(`Servidor Rodando`) );
+// Exporta o manipulador para o Vercel
+export default app;

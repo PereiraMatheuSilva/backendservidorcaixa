@@ -15,6 +15,7 @@ const router = Router();
 router.post('/bank', new CreateBankController().handle);
 router.get('/bank', new GetBankController().handle);
 
+router.get("/", (req, res) => res.send("Express on Vercel"));
 
 // Rotas Balance
 router.post('/balance', new CreateBalanceController().handle);
