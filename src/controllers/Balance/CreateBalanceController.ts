@@ -3,12 +3,12 @@ import { CreateBalanceService } from '../../services/Balance/CreateBalanceServic
 
 class CreateBalanceController{
   async handle(req: Request, res: Response){
-    const {value, status, bankId} = req.body;
+    const {value, status, bankId, obsText} = req.body;
 
     const createBalanceService = new CreateBalanceService();
 
     const balance = await createBalanceService.execute({
-      value, status, bankId
+      value, status, bankId, obsText
     });
 
     return res.json(balance)
