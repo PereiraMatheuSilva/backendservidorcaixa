@@ -21,6 +21,7 @@ model Balance {
   value      String
   status     Boolean?
   bankId     String    @db.Uuid
+  obsText    String
   bank       Bank      @relation(fields: [bankId], references: [id]) // Relacionamento
   created_at DateTime? @default(now())
   updated_at DateTime? @default(now())
